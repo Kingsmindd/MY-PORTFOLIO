@@ -1,4 +1,6 @@
+// import { ChartNoAxesCombined } from "lucide-react";
 import { FaReact, FaNodeJs, FaGitAlt, FaGithub } from "react-icons/fa";
+import { LuShieldCheck } from "react-icons/lu";
 
 import {
   SiTypescript,
@@ -10,6 +12,12 @@ import {
   SiJsonwebtokens,
   SiVercel,
   SiRender,
+  SiPostgresql,
+  SiNeon,
+  SiZod,
+  SiAxios,
+  SiReacthookform,
+  SiReactquery,
 } from "react-icons/si";
 
 export const techStack = [
@@ -52,6 +60,18 @@ export const techStack = [
         name: "MongoDB",
         icon: SiMongodb,
       },
+      {
+        name: "PostgreSQL",
+        icon: SiPostgresql,
+      },
+      {
+        name: "Prisma",
+        icon: LuShieldCheck,
+      },
+      {
+        name: "Neon",
+        icon: SiNeon,
+      },
     ],
   },
 
@@ -62,8 +82,62 @@ export const techStack = [
         name: "JWT",
         icon: SiJsonwebtokens,
       },
+      {
+        name: "bcrypt",
+        icon: LuShieldCheck,
+      },
+      {
+        name: "Cookie Parser",
+        icon: LuShieldCheck,
+      },
     ],
   },
+
+  {
+    title: "Security & Validation",
+    technologies: [
+      {
+        name: "Zod",
+        icon: SiZod,
+      },
+      {
+        name: "Helmet",
+        icon: LuShieldCheck,
+      },
+      {
+        name: "CORS",
+        icon: LuShieldCheck,
+      },
+    ],
+  },
+
+  {
+    title: "Forms & Data",
+    technologies: [
+      {
+        name: "React Hook Form",
+        icon: SiReacthookform,
+      },
+      {
+        name: "TanStack Query",
+        icon: SiReactquery,
+      },
+      {
+        name: "Axios",
+        icon: SiAxios,
+      },
+    ],
+  },
+
+  // {
+  //   title: "Analytics",
+  //   technologies: [
+  //     {
+  //       name: "Recharts",
+  //       icon: ChartNoAxesCombined,
+  //     },
+  //   ],
+  // },
 
   {
     title: "Tools & Platforms",

@@ -1,42 +1,31 @@
-import type { Project } from "../data/Project";
+import type { Project } from '../data/Project';
 
-interface ProjectCardProps {
-  project: Project;
-}
-
-const ProjectsCard = ({ project }: ProjectCardProps) => {
-  return (
-    <div className="rounded-xl shadow-lg overflow-hidden text-white dark:text-black ">
-      <img
-        src={project.image}
-        alt={project.title}
-        className="w-full h-60 object-cover"
-      />
-
-      <div className="p-5">
-        <h3 className="text-2xl font-bold  font-display">{project.title}</h3>
-
-        <p className="mt-2 font-medium font-mono ">{project.description}</p>
-
-        <div className="flex flex-wrap gap-2 mt-4 ">
-          {project.tech.map((tech) => (
-            <p
-              key={tech}
-              className="px-3 py-1 bg-yellow-500  dark:bg-slate-600 font-mono  dark:text-white rounded-full text-gray-900"
-            >
-              {tech}
-            </p>
-          ))}
-        </div>
-
-        <div className="mt-6 flex gap-4">
-          {project.liveUrl && <a href={project.liveUrl}>Live Demo</a>}
-
-          <a href={project.githubUrl}>GitHub</a>
-        </div>
-      </div>
+const ProjectsCard = ({project}: {project: Project}) => (
+ <article className="project-card">
+  <div className="project-overview">
+   <div className="project-image"><img src={project.image} alt={project.title + ' application screenshot'} loading="lazy" width="960" height="600" /></div>
+   <div className="project-copy">
+    <span className="eyebrow">{project.featured ? '01 / Featured full-stack project' : '02 / Frontend project'}</span>
+    <h3>{project.title}</h3><p>{project.description}</p>
+    <ul className="tags" aria-label="Technologies">{project.tech.map(tech=><li key={tech}>{tech}</li>)}</ul>
+    <div className="actions">
+     {project.liveUrl && <a className="button button-primary" href={project.liveUrl} target="_blank" rel="noopener noreferrer">Live Demo <span aria-hidden="true">↗</span></a>}
+     <a className="button" href={project.githubUrl} target="_blank" rel="noopener noreferrer">{project.gitHubBackend ? 'Frontend code' : 'GitHub'}</a>
+     {project.gitHubBackend && <a className="button" href={project.gitHubBackend} target="_blank" rel="noopener noreferrer">Backend code</a>}
     </div>
-  );
-};
-
+   </div>
+  </div>
+  {project.caseStudy && <details className="case-study" open>
+   <summary>Behind the build — project case study</summary>
+   <div className="case-study-grid">
+    <div><h4>The problem</h4><p>{project.caseStudy.problem}</p></div>
+    <div><h4>My contribution</h4><p>{project.caseStudy.role}</p></div>
+    <div><h4>What the application does</h4><ul>{project.caseStudy.features.map(feature=><li key={feature}>{feature}</li>)}</ul></div>
+    <div><h4>Technical decisions</h4><ul>{project.caseStudy.decisions.map(decision=><li key={decision}>{decision}</li>)}</ul></div>
+    <div><h4>From interface to database</h4><div className="architecture"><span>React</span><span aria-hidden="true">→</span><span>Express API</span><span aria-hidden="true">→</span><span>Prisma</span><span aria-hidden="true">→</span><span>PostgreSQL</span></div></div>
+    <div><h4>What I learned</h4><p>{project.caseStudy.learning}</p></div>
+   </div>
+  </details>}
+ </article>
+);
 export default ProjectsCard;

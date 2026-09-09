@@ -1,42 +1,8 @@
-import React from "react";
-import { techStack } from "../data/TechStack";
-
-const Skills: React.FC = () => {
-  return (
-    <div className="mt-10">
-      <h1 className="text-4xl font-bold text-center font-sans text-amber-400 dark:text-black">
-        My Skills
-      </h1>
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-white dark:text-black">
-        {techStack.map((category) => (
-          <div
-            key={category.title}
-            className="rounded-2xl border p-6 self-start"
-          >
-            <h3 className="mb-4 text-xl font-semibold text-amber-400 font-sans dark:text-slate-700">
-              {category.title}
-            </h3>
-
-            <div className="space-y-3">
-              {category.technologies.map((tech) => {
-                const Icon = tech.icon;
-
-                return (
-                  <div
-                    key={tech.name}
-                    className="flex items-center gap-3 rounded-lg border px-4 py-2"
-                  >
-                    <Icon className="text-xl" />
-                    <span>{tech.name}</span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
+import { techStack } from '../data/TechStack';
+const Skills = () => (
+ <section className="section container" id="skills" aria-labelledby="skills-title">
+  <div className="section-heading"><div><span className="eyebrow">03 / Toolkit</span><h2 id="skills-title">Tools I build with.</h2></div><p>From the interface and API to data storage and deployment.</p></div>
+  <div className="skills-grid">{techStack.map(category=><div className="skill-group" key={category.title}><h3>{category.title}</h3><div className="skill-items">{category.technologies.map(tech=>{const Icon=tech.icon;return <span className="skill-item" key={tech.name}><Icon aria-hidden="true"/>{tech.name}</span>;})}</div></div>)}</div>
+ </section>
+);
 export default Skills;

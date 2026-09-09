@@ -1,13 +1,29 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>my-portfolio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+ <head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101e2a" />
+  <title>KingsMind | Full-Stack Developer</title>
+  <meta name="description" content="KingsMind is a full-stack developer in Lagos, Nigeria. Explore React, TypeScript, Node.js, and PostgreSQL projects, including a personal finance tracker." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="KingsMind | Full-Stack Developer" />
+  <meta property="og:description" content="Explore my projects, from responsive interfaces to full-stack applications. Based in Lagos, Nigeria." />
+  <meta property="og:site_name" content="KingsMind" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="KingsMind | Full-Stack Developer" />
+  <meta name="twitter:description" content="React, TypeScript, Node.js, and PostgreSQL. Explore the work of KingsMind, a full-stack developer in Lagos." />
+  <script>
+   (() => {
+    let theme;
+    try { theme = localStorage.getItem('theme'); } catch {}
+    document.documentElement.classList.toggle('dark', theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches));
+   })();
+  </script>
+ </head>
+ <body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+ </body>
 </html>

@@ -1,75 +1,42 @@
-# React + TypeScript + Vite
+# KingsMind portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React and TypeScript portfolio featuring the Personal Finance Tracker and Space Tourism projects.
 
-Currently, two official plugins are available:
+## Development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Run `npm run dev` to start the Vite development server.
+- Run `npm run build` to type-check and build the production site.
+- Run `npm run lint` to check the source.
 
-## React Compiler
+## Content
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `src/data/Project.ts`: project descriptions, screenshots, source links, and the finance tracker case study.
+- `src/data/Profile.ts`: email, GitHub, availability, LinkedIn, and résumé link.
+- `src/data/TechStack.ts`: skills.
+- `src/index.css`: shared light/dark colors, typography, and responsive layouts.
 
-## Expanding the ESLint configuration
+LinkedIn and résumé links are intentionally hidden until actual values are supplied. To add a résumé, place the finished PDF in `public/` and set `resumeUrl` to its public path in `Profile.ts`. Set `linkedin` to your real profile URL.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Social sharing
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+The generated sharing card is stored in `public/og.png`.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+The default public URL is `https://my-portfolio-nu-rust-99.vercel.app/`. If you move the site, set `VITE_SITE_URL` in your hosting build environment (or in a local `.env.local` file), then rebuild. The Vite configuration writes the canonical URL, Open Graph URL, and absolute image URLs into the built HTML.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The page title, description, Open Graph text, and Twitter/X text are in `index.html`. Sharing crawlers can read the built metadata without running JavaScript.
 
-```
+## Theme
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The saved theme takes priority over the system preference. The initial theme is applied before React loads to avoid a flash of the wrong background. Light and dark colors are defined together in `src/index.css`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Contact form
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The contact section posts name, email, and message directly to FormSubmit using the recipient in `src/data/Profile.ts`. Visitors do not need an email app. The form uses the FormSubmit AJAX endpoint and displays sending, success, and error feedback without leaving the page. Inputs are locked while sending to prevent duplicate submissions, and failed requests preserve the message. Requests time out after 20 seconds without automatic retries. AJAX does not show an interactive reCAPTCHA; spam filtering is handled by the provider. No API key is required in the browser.
 
-```
+Before relying on delivery:
+1. Run the site on localhost or deploy the updated site.
+2. Submit a message through the form yourself.
+3. Open the FormSubmit activation email in `umehprince536@gmail.com` (check spam) and confirm the form.
+4. Submit another message and verify inbox delivery and the Reply-To address.
+
+Changing the recipient may require activating the new address. Delivery is not verified by the production build or lint checks. FormSubmit documentation: https://formsubmit.co/
