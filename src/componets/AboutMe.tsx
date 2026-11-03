@@ -6,7 +6,7 @@ const AboutMe = () => (
   >
     <img
       className="portrait"
-      src="https://res.cloudinary.com/dkvooc6af/image/upload/v1783525891/WhatsApp_Image_2026-07-08_at_8.49.23_AM_geac15.jpg"
+      src="https://res.cloudinary.com/dkvooc6af/image/upload/v1793742032/my_first_dp_zw5qcr.jpg"
       alt="KingsMind"
       loading="lazy"
       width="280"
