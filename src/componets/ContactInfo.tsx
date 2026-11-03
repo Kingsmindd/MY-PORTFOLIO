@@ -1,3 +1,4 @@
+import { Download } from "lucide-react";
 import { useEffect, useRef, useState, type SubmitEvent } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { profile } from "../data/Profile";
@@ -103,8 +104,8 @@ const ContactInfo = () => {
       </div>
       {profile.resumeUrl && (
         <div className="actions">
-          <a className="button" href={profile.resumeUrl} download>
-            Download résumé
+          <a className="button" href={profile.resumeUrl} download="KingsMind-CV.pdf">
+            <Download size={18} aria-hidden="true" /> Download CV
           </a>
         </div>
       )}
