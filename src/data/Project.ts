@@ -2,6 +2,7 @@ import SpaceTourism from "../assets/Space-tourism.png";
 import Personalfinance from "../assets/Personal finance tracker .png";
 import Audiophile from "../assets/audiophile.png";
 import TaskDuty from "../assets/task-duty.png";
+import KingsmindStore from "../assets/kingsmind-store.jpg";
 
 export interface Project {
   title: string;
@@ -23,6 +24,46 @@ export interface Project {
 }
 export const projects: Project[] = [
   {
+    title: "KINGSMIND Store",
+    description:
+      "A full-stack football essentials store with customer accounts, saved carts, mixed-currency checkout, delivery quotes, pay-on-delivery orders, and an admin dashboard.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Cloudinary",
+    ],
+    image: KingsmindStore,
+    liveUrl: "https://kingsmind-store.vercel.app/",
+    githubUrl: "https://github.com/Kingsmindd/KINGSMIND-STORE-",
+    featured: true,
+    caseStudy: {
+      problem:
+        "I wanted to build a football storefront that connects shopping to order fulfilment, including delivery quotes, stock management, customer accounts, and support.",
+      role:
+        "I built the React frontend, Express API, and PostgreSQL database, connected image uploads and transactional email, and deployed the application using Vercel, Render, Neon, and Cloudinary.",
+      features: [
+        "Search products, add items directly from the collection, and save a cart to an account.",
+        "Combine NGN and USD products into one NGN checkout using an admin-managed exchange rate.",
+        "Manage products, quote delivery, confirm orders, ship items, and record payment on delivery.",
+        "Support guest and customer conversations with read indicators and email notifications.",
+      ],
+      decisions: [
+        "Server-side pricing uses integer minor units and saves order price and exchange-rate snapshots.",
+        "A pricing fingerprint detects changes between checkout review and order submission.",
+        "PostgreSQL-backed sessions, CSRF tokens, role checks, and hashed verification and reset tokens protect account workflows.",
+        "Stock allocations and order status checks coordinate confirmation, cancellation, and shipping.",
+        "Cloudinary stores product pictures, while Vercel forwards API requests to the Render backend.",
+      ],
+      learning:
+        "Building and deploying KINGSMIND helped me connect frontend state with database transactions, session cookies, image storage, and email delivery. I also learned to trace failures across the browser, API, database, and hosting services.",
+      architecture: ["React", "Express API", "PostgreSQL"],
+    },
+  },
+  {
     title: "Personal Finance Tracker",
     description:
       "A full-stack application for recording income and expenses, exploring monthly trends, and keeping personal finances in one place.",
@@ -40,7 +81,6 @@ export const projects: Project[] = [
     githubUrl:
       "https://github.com/Kingsmindd/personal-finance-tracker-frontend-",
     gitHubBackend: "https://github.com/Kingsmindd/personal-finance-tracker-api",
-    featured: true,
     caseStudy: {
       problem:
         "Keeping track of individual purchases is only part of managing money. I wanted one place to record transactions, review income against expenses, and see how those totals change over time.",
