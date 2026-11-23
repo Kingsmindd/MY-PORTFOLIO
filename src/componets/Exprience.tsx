@@ -9,7 +9,7 @@ const steps = [
     year: "2026",
     title: "React & TypeScript",
     description:
-      "Built frontend applications with reusable components and Tailwind CSS, including Space Tourism.",
+      "Built responsive frontend applications with reusable components and Tailwind CSS.",
   },
   {
     year: "Present",

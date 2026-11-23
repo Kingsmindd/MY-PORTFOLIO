@@ -1,5 +1,4 @@
-import SpaceTourism from "../assets/Space-tourism.png";
-import Personalfinance from "../assets/Personal finance tracker .png";
+import Personalfinance from "../assets/personal-finance-tracker.jpg";
 import Audiophile from "../assets/audiophile.png";
 import TaskDuty from "../assets/task-duty.png";
 import KingsmindStore from "../assets/kingsmind-store.jpg";
@@ -66,7 +65,7 @@ export const projects: Project[] = [
   {
     title: "Personal Finance Tracker",
     description:
-      "A full-stack application for recording income and expenses, exploring monthly trends, and keeping personal finances in one place.",
+      "A responsive finance dashboard for tracking income and expenses, exploring monthly charts, and exporting searchable transaction records.",
     tech: [
       "React",
       "TypeScript",
@@ -84,12 +83,12 @@ export const projects: Project[] = [
     caseStudy: {
       problem:
         "Keeping track of individual purchases is only part of managing money. I wanted one place to record transactions, review income against expenses, and see how those totals change over time.",
-      role: "I built the React interface and the Express API, connected PostgreSQL through Prisma, and implemented the transaction and account workflows.",
+      role: "I built the responsive React interface and Express API, connected PostgreSQL through Prisma, and integrated Brevo email verification and password recovery.",
       features: [
         "Create, edit, and delete income and expenses with categories and transaction dates.",
         "Search, filter, sort, and paginate transactions.",
-        "Review income, expenses, balances, and monthly analytics.",
-        "Export transaction records as CSV and manage account preferences.",
+        "Review income, expenses, and monthly trends through dashboard summaries and charts.",
+        "Export transactions as CSV and manage profile, currency, password, and email verification in settings.",
       ],
       decisions: [
         "PostgreSQL Decimal fields and Prisma decimal arithmetic keep stored amounts and calculated totals precise.",
@@ -100,15 +99,6 @@ export const projects: Project[] = [
       learning:
         "This project brought the interface, authentication, validation, and database together. It also made the details of session expiry, transaction dates, and consistent error handling concrete parts of the development process.",
     },
-  },
-  {
-    title: "Space Tourism",
-    description:
-      "A responsive multi-page space tourism website, built with reusable React components and layouts that adapt across screen sizes.",
-    tech: ["React", "TypeScript", "Tailwind CSS"],
-    image: SpaceTourism,
-    liveUrl: "https://space-tourism-ih71.vercel.app/",
-    githubUrl: "https://github.com/Kingsmindd/SPACE-TOURISM",
   },
 
   {
