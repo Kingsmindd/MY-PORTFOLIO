@@ -8,8 +8,7 @@ const Projects = () => (
   >
     <div className="section-heading">
       <div>
-        <span className="eyebrow">01 / Selected work</span>
-        <h2 id="projects-title">Projects with purpose.</h2>
+        <h2 id="projects-title">Selected work</h2>
       </div>
       <p>
         A closer look at what I build, how it works, and the decisions behind

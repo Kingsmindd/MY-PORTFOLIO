@@ -75,7 +75,6 @@ const ContactInfo = () => {
     aria-labelledby="contact-title"
   >
     <div>
-      <span className="eyebrow">05 / Get in touch</span>
       <h2 id="contact-title">Let’s work together.</h2>
       <p>
         {profile.availability} Have something in mind? Send me a message about
@@ -88,7 +87,7 @@ const ContactInfo = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        {profile.email} <span aria-hidden="true">↗</span>
+        {profile.email}
       </a>
       <div className="contact-links">
         <a href={profile.github} target="_blank" rel="noopener noreferrer">
@@ -137,7 +136,7 @@ const ContactInfo = () => {
       </div>
       <p id="message-note" className="contact-note">Your details are sent through FormSubmit to my inbox.</p>
       <button className="button button-primary" type="submit" disabled={status === "sending"}>
-        {status === "sending" ? "Sending…" : "Send message"} <span aria-hidden="true">↗</span>
+        {status === "sending" ? "Sending…" : "Send message"}
       </button>
       </fieldset>
       <div className={`contact-status contact-status-${status}`} role="status" aria-live="polite" aria-atomic="true">

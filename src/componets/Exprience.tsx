@@ -15,7 +15,7 @@ const steps = [
     year: "Present",
     title: "Full-stack development",
     description:
-      "Built some application with React, Node.js, Express, PostgreSQL, MongoDB , Moongose  and Prisma.",
+      "Built and deployed full-stack applications using React, Express, PostgreSQL, and MongoDB.",
   },
 ];
 const Exprience = () => (
@@ -26,8 +26,7 @@ const Exprience = () => (
   >
     <div className="section-heading">
       <div>
-        <span className="eyebrow">04 / My journey</span>
-        <h2 id="journey-title">Learning through building.</h2>
+        <h2 id="journey-title">Development journey</h2>
       </div>
     </div>
     <div className="journey">

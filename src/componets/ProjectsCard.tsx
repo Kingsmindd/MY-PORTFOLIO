@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import type { Project } from "../data/Project";
 
 const ProjectsCard = ({ project }: { project: Project }) => (
-  <article className="project-card">
+  <article className={project.featured ? "project-card project-featured" : "project-card"}>
     <div className="project-overview">
       <div className="project-image">
         <img
@@ -36,7 +36,7 @@ const ProjectsCard = ({ project }: { project: Project }) => (
               target="_blank"
               rel="noopener noreferrer"
             >
-              Live Demo <span aria-hidden="true">↗</span>
+              Live demo
             </a>
           )}
           <a
@@ -62,7 +62,7 @@ const ProjectsCard = ({ project }: { project: Project }) => (
     </div>
     {project.caseStudy && (
       <details className="case-study">
-        <summary>Behind the build — project case study</summary>
+        <summary>Read case study</summary>
         <div className="case-study-grid">
           <div>
             <h4>The problem</h4>
